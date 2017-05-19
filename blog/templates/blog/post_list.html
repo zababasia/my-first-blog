@@ -3,20 +3,16 @@
         <title>Żabi Świat</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">Żabkowy Blog</a></h1>
-        </div>
+      <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+      </div>
 
+      {% for post in posts %}
         <div>
-          <p>published: 17.05.2017, 14:06</p>
-          <h2><a href="">Pierwszy żabi post</a></h2>
-          <p>RECH, RECH, Kum, Kum</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-          <p>published: 17.05.2017, 14:06</p>
-          <h2><a href="">Drugi żabi post</a></h2>
-          <p>bebebebebebebebbebebebebebe...</p>
-        </div>
+      {% endfor %}
     </body>
 </html>
